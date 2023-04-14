@@ -1,0 +1,149 @@
+@font-face {
+    font-family: "new corrier";
+    src: url("courier-new-ce-bold.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    width: 100%;    
+    height: 100vh;
+    background-image: url(../static/imagens/05c83cdb-575a-4c0e-bea0-2faf75eba0c5.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+.container{
+    background-color: #D9310B;
+    max-width: 280px;
+    margin: 0 auto;
+    animation: de-volta 1s;
+    border-radius: 5px;
+
+}
+table{
+    background-color: #D9310B;
+}
+.form-login{
+    background-color: #D9310B;
+    max-width: 500px;
+    height: 350px;
+    padding: 40px;
+    border-radius: 10px;
+    justify-content: center;
+  
+    
+}
+.form-login h1{
+    text-align: center;
+    font-size: 30px;
+    color: #464cbb;
+    background-color: #0D0D0D;
+    border-radius: 5px;
+    width: 200px;
+    left: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+
+    
+}
+.form-login p{
+    text-align: left;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 2px;
+    
+
+}
+.input-formulario{
+    position: relative;
+    margin: 20px 0;
+    animation: de-volta 1s;
+    border: #0D0D0D;
+    
+}
+.input-formulario label{
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    
+}
+
+.input{
+    color: #0D0D0D;
+    width: 100%;
+    border: none;
+    background-color:  #D9310B;
+    border-bottom: 2px solid #8d0606;
+    outline: 0;
+
+
+}
+
+@keyframes de-volta{
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+}
+.input-formulario input:focus ~ label,
+.input-formulario input:valid ~label{
+    transform: translateY(-20px);
+    font-size: 12px;
+    transition: 0.5s;
+    
+}
+@keyframes menorizar{
+    0%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(-20px);
+        font-size: 12px;
+
+    }
+}
+.btn{
+    border: none;
+    
+}
+.entrar{
+    background-color: #0D0D0D;
+    border-radius: 3px;
+    color: #464cbb;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    position: relative;
+    left: 39px;
+}
+.entrar:hover{
+    color: #D9310B;    
+}
+.lin{
+    font-family: 'Courier New', Courier, monospace;
+    padding: 1px;
+}
+/* Para todos os navegadores, exceto o Internet Explorer */
+::-webkit-scrollbar {
+    width: 10px; /* Largura da barra de rolagem */
+    height: 10px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor do fundo da barra de rolagem */
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #888; /* Cor da barra de rolagem */
+}
+  
+ 

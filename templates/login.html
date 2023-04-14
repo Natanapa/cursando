@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro de Usuários</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style_login.css')}}">
+</head>
+<body>
+    
+    <section class="form-container">
+        
+            {% if mensagem %}
+                <div class="alert alert-danger">{{ mensagem }}</div>
+            {% endif %}
+        
+        <div class="container">
+            <form action="/cadastro" method="POST">
+                <h1>&lt;Cadastrar&gt;</h1>
+                <p>Vamos começar?</p>
+                <a href="/">Login aqui!</a>
+                <div class="input-formulario">
+                    <input type="text" id="nome" name="nome" class="input" required>
+                    <label for="nome">Digite um nome:</label>
+                </div>
+                <div class= "input-formulario">
+                    <input type="text" id="email_cadastro" name="email" class="input" required>
+                    <label for="email">Digite um E-mail:</label>
+                </div>
+                <button action="/verificar_login" methods="POST" type="submit" class="btn entrar">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+</body>
+</html>

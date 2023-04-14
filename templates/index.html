@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem Vindo!</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    
+</head>
+<body>
+    <section class="form-container">
+        <div class="container">
+            {% if mensagem %}
+            <div class="alert alert-danger">{{ mensagem }}</div>
+            {% endif %}
+            <form class="form-login" action="verificar_login" method="POST">
+                <h1>&lt;Fazer login&gt;</h1>
+                <p>Primeira vez?</p>
+                <a href="/login" class="lin" action="/">"Crie um aqui!"</a>
+                <div class="input-formulario">
+                    <input type="text" name="username" id="username" class="input" required>
+                    <label for="username">Digite o nome do usuário</label>
+                </div>
+                <div class="input-formulario">
+                    <input type="text" name="email" id="email" class="input" required>
+                    <label for="email">Digite o email do usuário</label>
+                   
+                </div>
+                <button class="btn entrar" id="ent"><b>&lt;Entrar&gt;</b></button> 
+            </form>
+        </div>
+    </section>
+</body>
+</html>
