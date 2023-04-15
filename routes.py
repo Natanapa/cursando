@@ -1,5 +1,5 @@
 from flask import Flask, make_response, render_template, request, redirect
-import sqlite3
+import os
 from  funçoes import veri_login, efetuando_cadastro
 
 
@@ -66,7 +66,8 @@ def usuario():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.getenv('PORT'), '5000')
+    app.run(host='0.0.0.0', port=port)
 
 
 
