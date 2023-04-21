@@ -1,4 +1,4 @@
-from __init__ import app
+from app import app
 from flask import  make_response, render_template, request
 import sqlite3
 
