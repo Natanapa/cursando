@@ -1,7 +1,7 @@
 from flask import Flask, make_response, render_template, request, redirect
 import os
-from  app.funçoes import veri_login, efetuando_cadastro
-from app import app
+from  funçoes import veri_login, efetuando_cadastro
+from __init__ import app
 
 
 

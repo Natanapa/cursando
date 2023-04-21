@@ -1,9 +1,9 @@
-from app import app
+from __init__ import app
 from flask import  make_response, render_template, request
 import sqlite3
 
 # Conexão com o banco de dados SQLite3
-conn = sqlite3.connect('C:\\Users\\Natanael Matos\\OneDrive\\Área de Trabalho\\curando\\dados.db',  check_same_thread=False)
+conn = sqlite3.connect('dados.db',  check_same_thread=False)
 cursor = conn.cursor()
 
 
