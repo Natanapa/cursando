@@ -1,7 +1,15 @@
 from flask import  make_response, render_template, request
 import sqlite3
+
+banco = ""
+import os
+def conectando_com_banco(app):
+    #definindo o caminho do banco de dados para sempre estar na raiz do codigo
+    DATABASE_PATH = os.path.join(app.root_path, 'dados.db')
+    banco = DATABASE_PATH
+
 # Conexão com o banco de dados SQLite3
-conn = sqlite3.connect('C:\\Users\\Natanael Matos\\OneDrive\\Área de Trabalho\\curando\\dados.db',  check_same_thread=False)
+conn = sqlite3.connect(banco,  check_same_thread=False)
 cursor = conn.cursor()
 
 
