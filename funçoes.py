@@ -1,8 +1,9 @@
 from flask import  make_response, render_template, request
 import sqlite3
+import os
 
 banco = ""
-import os
+
 def conectando_com_banco(app):
     #definindo o caminho do banco de dados para sempre estar na raiz do codigo
     DATABASE_PATH = os.path.join(app.root_path, 'dados.db')
