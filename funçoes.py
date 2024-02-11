@@ -55,7 +55,7 @@ def veri_login(username, email):
         print(resultado_email, resultado_username)
         if user:
             if resultado_username == username and resultado_email == email:
-                print(user)
+                print(user, username)
                 login_ok= True
                 return login_ok
                 
@@ -66,7 +66,7 @@ def veri_login(username, email):
         conn.rollback()
         login_ok = False
         return login_ok
-print(veri_login("natan", "natanirmao11@gmail.com"))
+
 
 
    
