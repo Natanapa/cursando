@@ -4,7 +4,12 @@ from  funçoes import veri_login, efetuando_cadastro
 
 
 app = Flask(__name__)
-
+def conectando_com_banco(app):
+    #definindo o caminho do banco de dados para sempre estar na raiz do codigo
+    DATABASE_PATH = os.path.join(app.root_path, 'dados.db')
+    
+    return DATABASE_PATH
+banco = conectando_com_banco(app)
 
 
 
@@ -30,6 +35,8 @@ def cadastro():
             mensagem = "O e-mail {} já está cadastrado no banco de dados.".format(email)
             response = make_response(render_template('login.html', mensagem=mensagem))
             return response
+        else:
+            return efetuando_cadastro(nome, email)
         return redirect('verificar_cadastro')
     return render_template('login.html')
 

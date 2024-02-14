@@ -2,15 +2,15 @@ from flask import  make_response, render_template, request
 import sqlite3
 import os
 
-banco = ""
 
-def conectando_com_banco(app):
-    #definindo o caminho do banco de dados para sempre estar na raiz do codigo
-    DATABASE_PATH = os.path.join(app.root_path, 'dados.db')
-    banco = DATABASE_PATH
+
+
+
+     
 
 # Conexão com o banco de dados SQLite3
-conn = sqlite3.connect(banco,  check_same_thread=False)
+
+conn = sqlite3.connect("C:\\Users\\natanael.matos\\Desktop\\Natanael Matos\\projetos em processo\\cursando\\banco.db", check_same_thread=False)
 cursor = conn.cursor()
 
 
@@ -42,23 +42,25 @@ def efetuando_cadastro(nome, email):
     return "Usuário cadastrado com sucesso!"
 
 def veri_login(username, email):
-    print(username,  email)
+    print(f'teste o usuario e email digitados {type(username),  type(email)}')
     login_ok = False
     
     try:
         
-        cursor.execute("SELECT * FROM usuarios WHERE email = ?", (email,))
+        cursor.execute("""SELECT * FROM usuarios where nome = ?""", (username,))
         
         user = cursor.fetchone()
-        print(user)
-        resultado_username = user[1]
-        resultado_email = user[2]
-        print(resultado_email, resultado_username)
+        print(f'teste o user {user}')
+        
+        
         if user:
+            resultado_username = user[1]
+            resultado_email = user[2]
+            print(resultado_email, resultado_username)
             if resultado_username == username and resultado_email == email:
                 print(user, username)
                 login_ok= True
-                return login_ok
+                return True
                 
         else:
             login_ok = False
@@ -66,8 +68,8 @@ def veri_login(username, email):
     except  Exception:
         conn.rollback()
         login_ok = False
-        return login_ok
+        return False
 
-
+veri_login('natan', 'natan')
 
    
